@@ -36,7 +36,7 @@ jobs:
       - name: install packages
         run: |
           pip install wheel
-          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
       - name: unittest
         run: |
           python -m unittest discover -b
