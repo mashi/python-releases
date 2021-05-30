@@ -9,6 +9,7 @@ fig = visualization(df)
 
 app = dash.Dash()
 app.layout = html.Div([dcc.Graph(figure=fig)])
+server = app.server
 
 
 if __name__ == "__main__":
