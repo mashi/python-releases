@@ -9,7 +9,13 @@ from bs4 import BeautifulSoup
 
 def get_information():
     """Web scraping: get python releases from html page and returns a
-    dataframe."""
+    dataframe.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Dataframe with the collected data.
+    """
     site = "https://www.python.org/downloads/"
     page = requests.get(site)
     soup = BeautifulSoup(page.content, "html.parser")
@@ -52,10 +58,19 @@ def get_information():
     return df
 
 
-if __name__ == "__main__":
-    # get the information table of current and past releases
-    df = get_information()
+def visualization(df):
+    """Gantt charts for the dataframe.
 
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Dataframe with information about the python releases.
+
+    Returns
+    -------
+    plotly.graph_objs._figure.Figure
+        Plotly graph of the dataframe.
+    """
     # bar plot of the dates
     fig = px.timeline(
         df,
@@ -63,9 +78,15 @@ if __name__ == "__main__":
         x_end="End of support",
         y="Python version",
         color="Maintenance status",
-        color_discrete_sequence=["#1CBE4F", "#FEAF16", "#F6222E"],
+        color_discrete_sequence=["#1CBE4F", "#FEAF16", "#EF553B"],
     )
 
     today = datetime.today().strftime("%Y-%m-%d")
     fig.add_vline(x=today)
+    return fig
+
+
+if __name__ == "__main__":
+    df = get_information()
+    fig = visualization(df)
     fig.show()
