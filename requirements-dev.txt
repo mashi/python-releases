@@ -26,7 +26,7 @@ mccabe==0.6.1
 nodeenv==1.6.0
 numpy==1.21.0
 pandas==1.2.5
-plotly==4.14.3
+plotly==5.0.0
 pre-commit==2.13.0
 pycodestyle==2.7.0
 pyflakes==2.3.1
