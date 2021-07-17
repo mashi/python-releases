@@ -2,6 +2,12 @@
   "extends": [
     "config:base"
   ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": [ "dash" ],
+      "groupName": "dash"
+    }
+  ],
   "pip_requirements": {
     "fileMatch": ["requirements-dev", "requirements$"]
   },
