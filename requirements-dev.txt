@@ -5,11 +5,11 @@ certifi==2021.5.30
 cfgv==3.3.1
 chardet==4.0.0
 click==8.0.1
-dash==1.21.0
-dash-core-components==1.17.1
-dash-html-components==1.1.4
+dash==2.0.0
+dash-core-components==2.0.0
+dash-html-components==2.0.0
 dash-renderer==1.9.1
-dash-table==4.12.0
+dash-table==5.0.0
 distlib==0.3.2
 filelock==3.0.12
 flake8==3.9.2
