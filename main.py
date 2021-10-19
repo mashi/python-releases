@@ -53,7 +53,10 @@ def get_information():
     # 0            3.9             bugfix     2020-10-05        2025-10          PEP 596
     # 1            3.8             bugfix     2019-10-14        2024-10          PEP 569
     # ...
-    matrix = np.array(row_list).reshape(5, 5)
+    # assume that the number of columns are constant
+    number_of_columns = 5
+    number_of_rows = len(row_list) // number_of_columns
+    matrix = np.array(row_list).reshape(number_of_rows, number_of_columns)
     df = pd.DataFrame(columns=column_list, data=matrix)
     return df
 
