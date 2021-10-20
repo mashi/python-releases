@@ -13,6 +13,9 @@ on:
 
 jobs:
   formatter:
+    # formatter is not needed in schedule runs
+    # it is more important when code is changed
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
