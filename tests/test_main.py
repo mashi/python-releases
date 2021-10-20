@@ -40,22 +40,34 @@ class TestMain(unittest.TestCase):
         self.assertEqual(1, 1)
 
     def test_header_elements(self):
+        # check if the function is capable of detecting the 5 elements
+        # from the # example string
         soup = BeautifulSoup(ROW_HEADINGS, "html.parser")
         columns = mn._get_header(soup)
         answer = 5
         self.assertEqual(answer, len(columns))
 
     def test_row_elements(self):
+        # check if the function is capable of detecting the 10 elements
+        # from the example string
         soup = BeautifulSoup(ROW_CONTENT, "html.parser")
         rows = mn._get_row(soup)
         answer = 10
         self.assertEqual(answer, len(rows))
 
-    def test_df_organization(self):
+    def test_df_organization_and_size(self):
+        # check if the output size of the dataframe
         column_name = ["a", "b"]
         data = ["a1", "b1", "a2", "b2", "a3", "b3"]
         df = mn._create_df(column_name, data)
 
+        row = df["a"]
+        row_list = ["a1", "a2", "a3"]
+        for idx, answer in enumerate(row_list):
+            with self.subTest(i=idx):
+                self.assertEqual(answer, row[idx])
+
+        # check size
         answer_rows = 3
         answer_cols = 2
         self.assertEqual(answer_rows, df.shape[0])
