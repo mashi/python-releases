@@ -39,10 +39,13 @@ def _get_row(soup):
     Returns
     -------
     list
-        Each element is a string of information. Note the orientation of
-        the information:
-        ['3.10', 'bugfix', '2021-10-04', '2026-10', 'PEP 619',
-         '2.7', 'end-of-life', '2010-07-03', '2020-01-01', 'PEP 373']
+        Each element is a string of information.
+
+    Example
+    -------
+    Note the orientation of the information:
+    ['3.10', 'bugfix', '2021-10-04', '2026-10', 'PEP 619',
+        '2.7', 'end-of-life', '2010-07-03', '2020-01-01', 'PEP 373']
     """
     row_content_class = "list-row-container menu"
     rows = soup.find(class_=row_content_class).get_text()
