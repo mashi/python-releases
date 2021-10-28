@@ -16,6 +16,7 @@
   "pip_requirements": {
     "fileMatch": ["requirements-dev", "requirements$"]
   },
+  "dependencyDashboard": true,
   "branchConcurrentLimit": 50,
   "prConcurrentLimit": 50,
   "automerge": true,
