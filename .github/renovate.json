@@ -6,14 +6,21 @@
     {
       "matchPackagePatterns": [ "dash" ],
       "groupName": "dash"
+    },
+    {
+      "matchPackagePatterns": [ "pycodestyle", "flake8", "pyflakes" ],
+      "separateMajorMinor": false,
+      "groupName": "linter"
     }
   ],
   "pip_requirements": {
     "fileMatch": ["requirements-dev", "requirements$"]
   },
-  "branchConcurrentLimit": 10,
-  "prConcurrentLimit": 10,
+  "branchConcurrentLimit": 50,
+  "prConcurrentLimit": 50,
   "automerge": true,
   "automergeType": "branch",
-  "schedule": ["every weekend"]
+  "schedule": [
+    "on the last day of the month"
+  ]
 }
