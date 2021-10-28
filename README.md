@@ -3,14 +3,14 @@
 
 
 # Description
-Visualization of python releases using [heroku](https://python-releases.herokuapp.com/).
+This repository implements a web scraper and data visualization.
+
+The interactive plot is uploaded to the Heroku platform ([link](https://python-releases.herokuapp.com/)).
 
 ![visualization](img/visualization.png)
 
 
 ## Softaware and Tools
-This repository implements a web scraper and data visualization.
-
 The development uses:
 1. Version control with git to track changes.
 
