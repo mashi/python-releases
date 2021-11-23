@@ -2,17 +2,6 @@
   "extends": [
     "config:base"
   ],
-  "packageRules": [
-    {
-      "matchPackagePatterns": [ "dash" ],
-      "groupName": "dash"
-    },
-    {
-      "matchPackagePatterns": [ "pycodestyle", "flake8", "pyflakes" ],
-      "separateMajorMinor": false,
-      "groupName": "linter"
-    }
-  ],
   "pip_requirements": {
     "fileMatch": ["requirements-dev", "requirements$"]
   },
