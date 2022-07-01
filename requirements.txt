@@ -3,5 +3,5 @@ dash==2.5.1
 gunicorn==20.1.0
 numpy==1.23.0
 pandas==1.4.3
-plotly==5.8.0
+plotly==5.9.0
 requests==2.27.1
