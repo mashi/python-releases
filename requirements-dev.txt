@@ -1,5 +1,5 @@
 beautifulsoup4==4.11.1
-dash==2.6.1
+dash==2.6.2
 flake8==5.0.4
 gunicorn==20.1.0
 numpy==1.23.2
