@@ -3,7 +3,7 @@ dash==2.14.0
 flake8==6.1.0
 gunicorn==21.2.0
 numpy==1.26.0
-pandas==1.5.3
+pandas==2.1.1
 plotly==5.17.0
 pre-commit==3.4.0
 requests==2.31.0
