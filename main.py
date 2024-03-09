@@ -92,7 +92,7 @@ def get_information():
         Dataframe with the collected data.
     """
     site = "https://www.python.org/downloads/"
-    page = requests.get(site)
+    page = requests.get(site, timeout=10)
     soup = BeautifulSoup(page.content, "html.parser")
 
     column_header = _get_header(soup)
