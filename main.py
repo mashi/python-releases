@@ -114,6 +114,7 @@ def visualization(df):
     plotly.graph_objs._figure.Figure
         Plotly graph of the dataframe.
     """
+    df["First released"] = df["First released"].str.replace("(planned)", "").str.strip()
     # bar plot of the dates
     fig = px.timeline(
         df,
