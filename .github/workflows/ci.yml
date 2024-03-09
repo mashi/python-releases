@@ -25,9 +25,9 @@ jobs:
       - name: code formatter
         run: |
           pip install wheel
-          pip install black
-          black --check .
-          black --check tests/
+          pip install ruff
+          ruff check .
+          ruff check tests/
 
   test:
     runs-on: ubuntu-22.04
