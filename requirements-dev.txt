@@ -4,5 +4,5 @@ gunicorn==22.0.0
 numpy==2.0.1
 pandas==2.2.2
 plotly==5.23.0
-pre-commit==3.7.1
+pre-commit==3.8.0
 requests==2.32.3
