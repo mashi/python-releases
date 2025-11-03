@@ -115,6 +115,13 @@ def visualization(df):
         Plotly graph of the dataframe.
     """
     df["First released"] = df["First released"].str.replace("(planned)", "").str.strip()
+    # Normalize the formats to solve:
+    # "End of support" - mixed formats:
+    # "2031-10" -> only year and month
+    # "2025-10-31"-> year, month, and day
+    df["First released"] = pd.to_datetime(df["First released"], errors="coerce", format="ISO8601")
+    df["End of support"] = pd.to_datetime(df["End of support"], errors="coerce", format="ISO8601")
+
     # bar plot of the dates
     fig = px.timeline(
         df,
@@ -122,7 +129,7 @@ def visualization(df):
         x_end="End of support",
         y="Python version",
         color="Maintenance status",
-        color_discrete_sequence=["#1CBE4F", "#FEAF16", "#EF553B"],
+        color_discrete_sequence=["#1CBE4F", "#FEAF16", "#EF553B", "#EF553B"],
     )
 
     today = datetime.today().strftime("%Y-%m-%d")
