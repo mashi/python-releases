@@ -22,10 +22,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.6"
       - name: code formatter
         run: |
-          pip install wheel
-          pip install ruff
+          uv venv
+          source .venv/bin/activate
+          uv pip install ruff
           ruff check .
           ruff check tests/
 
@@ -36,12 +41,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.6"
       - name: install packages
         run: |
-          pip install wheel
-          pip install -r requirements-dev.txt
+          uv venv
+          source .venv/bin/activate
+          uv pip install -r requirements-dev.txt
       - name: unittest
         run: |
+          source .venv/bin/activate
           python -m unittest discover -b
 
   run-code:
@@ -51,10 +62,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.6"
       - name: install packages
         run: |
-          pip install wheel
-          pip install -r requirements.txt
+          uv venv
+          source .venv/bin/activate
+          uv pip install -r requirements.txt
       - name: run-code
         run: |
+          source .venv/bin/activate
           python main.py
