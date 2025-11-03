@@ -1,4 +1,4 @@
-beautifulsoup4==4.12.3
+beautifulsoup4==4.14.2
 dash==2.18.2
 gunicorn==23.0.0
 numpy==2.1.1
