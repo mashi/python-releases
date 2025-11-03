@@ -52,6 +52,7 @@ jobs:
           uv pip install -r requirements-dev.txt
       - name: unittest
         run: |
+          source .venv/bin/activate
           python -m unittest discover -b
 
   run-code:
@@ -72,4 +73,5 @@ jobs:
           uv pip install -r requirements.txt
       - name: run-code
         run: |
+          source .venv/bin/activate
           python main.py
