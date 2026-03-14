@@ -1,5 +1,5 @@
 beautifulsoup4==4.14.3
-dash==3.4.0
+dash==4.0.0
 gunicorn==25.1.0
 numpy==2.4.2
 pandas==3.0.1
