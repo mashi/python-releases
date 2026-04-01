@@ -4,4 +4,4 @@ gunicorn==25.1.0
 numpy==2.4.4
 pandas==3.0.2
 plotly==6.5.2
-requests==2.33.0
+requests==2.33.1
