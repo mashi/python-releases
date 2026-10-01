@@ -1,7 +1,7 @@
 beautifulsoup4==4.15.0
 dash==4.4.1
 gunicorn==26.2.0
-numpy==2.5.2
+numpy==2.5.3
 pandas==3.0.5
 plotly==7.0.0
 pre-commit==4.6.2
